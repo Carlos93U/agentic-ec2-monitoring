@@ -1,0 +1,34 @@
+{
+  "app": "python3 app.py",
+  "watch": {
+    "include": ["**"],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "requirements*.txt",
+      ".env",
+      ".venv",
+      "docs",
+      "**/__pycache__",
+      "cdk.out"
+    ]
+  },
+  "context": {
+    "_comment": "Every key here can also be set as an environment variable (or in .env). Environment variables win over this context. See .env.example for the full list and README: Configuration.",
+    "bedrockModelId": "us.amazon.nova-2-lite-v1:0",
+    "bedrockReasoningEnabled": true,
+    "bedrockReasoningEffort": "low",
+    "alwaysNotify": false,
+    "monitoringWindowMinutes": 10,
+    "cpuWarningThreshold": 70,
+    "cpuCriticalThreshold": 90,
+    "notificationEmail": "you@example.com",
+    "scheduleExpression": "rate(5 minutes)",
+    "ec2InstanceType": "t3.micro",
+    "ec2InstanceCount": 2,
+    "detailedMonitoring": true,
+    "lambdaTimeoutSeconds": 180,
+    "lambdaMemoryMb": 2048,
+    "logRetentionDays": 14
+  }
+}

@@ -1,0 +1,10 @@
+# The build context is lambda_src/. Keep host artefacts out of the image so a
+# stale .pyc cannot shadow edited source and the image stays reproducible.
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+Dockerfile
+.dockerignore

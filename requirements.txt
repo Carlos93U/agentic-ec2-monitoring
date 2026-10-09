@@ -1,0 +1,14 @@
+# Infrastructure-time dependencies (CDK application).
+#
+# NOTE: crewai is intentionally NOT here. It only runs inside the Lambda
+# container image (see lambda_src/requirements.txt), because it is far too large
+# for a Lambda zip package (250 MB unzipped limit).
+aws-cdk-lib==2.272.0
+constructs>=10.0.0,<11.0.0
+
+# Used by the CDK app only to render resource ARNs (log group names, Bedrock
+# model/inference-profile ARNs) without guessing them by hand.
+boto3>=1.43.0,<2.0.0
+
+# Optional .env support for `cdk deploy`.
+python-dotenv>=1.0.0,<2.0.0

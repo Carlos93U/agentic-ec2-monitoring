@@ -1,0 +1,11 @@
+# Lambda container image for the monitoring function.
+#
+# Why a container and not a zip: crewai[bedrock] plus pydantic and boto3 is far
+# above the 250 MB unzipped limit of the zip runtime, and CDK forbids mixing
+# DockerImageCode with layers anyway.
+#
+# crewai[bedrock] already declares boto3, so it is not repeated here; it is
+# pinned anyway because the Bedrock Converse call is the critical path.
+crewai[bedrock]==1.15.23
+boto3>=1.43.0,<2.0.0
+json-repair>=0.58.5,<1.0.0
